@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Educational Platform</title>
+    <title>EduConnect - Interactive Learning Platform</title>
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Our custom stylesheet for additional styles -->
@@ -15,10 +15,10 @@
     <header class="bg-gray-800 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Website Logo or Title -->
-            <a href="#" id="home-logo" class="text-2xl font-bold text-blue-300">EduConnect</a>
+            <a href="#home" id="home-logo" class="text-2xl font-bold text-blue-300">EduConnect</a>
 
             <!-- Navigation Links -->
-            <nav>
+            <nav aria-label="Main Navigation">
                 <ul class="flex space-x-6">
                     <li><a href="#home" class="nav-link hover:text-blue-400 transition duration-300">Home</a></li>
                     <li><a href="#courses" class="nav-link hover:text-blue-400 transition duration-300">Courses</a></li>
@@ -31,11 +31,11 @@
     </header>
 
     <!-- Main content area where different sections will be displayed -->
-    <div id="content-area" class="container mx-auto p-8 mt-4 bg-white rounded-lg shadow-lg">
+    <main id="content-area" class="container mx-auto p-8 mt-4 bg-white rounded-lg shadow-lg" role="main">
 
         <!-- Home Section (initial view) -->
-        <section id="home" class="page-section">
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-6 text-center">Welcome to EduConnect!</h1>
+        <section id="home" class="page-section" aria-labelledby="home-heading">
+            <h1 id="home-heading" class="text-4xl font-extrabold text-gray-900 mb-6 text-center">Welcome to EduConnect!</h1>
             <p class="text-lg text-gray-700 leading-relaxed text-center max-w-2xl mx-auto mb-12">
                 Your journey to knowledge starts here. Explore our diverse courses, test your understanding with interactive quizzes, and track your progress.
                 We are dedicated to providing a seamless and enriching learning experience for everyone.
@@ -46,56 +46,61 @@
         </section>
 
         <!-- Courses Section -->
-        <section id="courses" class="page-section hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2">Our Popular Courses</h2>
-            <div id="courses-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section id="courses" class="page-section hidden" aria-labelledby="courses-heading">
+            <h2 id="courses-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2">Our Popular Courses</h2>
+            <div id="courses-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite">
                 <!-- Course cards will be dynamically loaded here by JavaScript -->
-                <p class="text-gray-500 text-center col-span-full">Loading courses...</p>
+                <p class="text-gray-500 text-center col-span-full" role="status">Loading courses...</p>
             </div>
         </section>
 
         <!-- Quizzes Section -->
-        <section id="quizzes" class="page-section hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2">Test Your Knowledge</h2>
-            <div id="quizzes-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section id="quizzes" class="page-section hidden" aria-labelledby="quizzes-heading">
+            <h2 id="quizzes-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-green-500 pb-2">Test Your Knowledge</h2>
+            <div id="quizzes-container" class="grid grid-cols-1 md:grid-cols-2 gap-6" aria-live="polite">
                 <!-- Quiz cards will be dynamically loaded here by JavaScript -->
-                <p class="text-gray-500 text-center col-span-full">Loading quizzes...</p>
+                <p class="text-gray-500 text-center col-span-full" role="status">Loading quizzes...</p>
             </div>
         </section>
 
         <!-- Course Detail Section -->
-        <section id="course-detail" class="page-section hidden">
-            <button id="back-to-courses" class="bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 transition duration-300 mb-6">
+        <section id="course-detail" class="page-section hidden" aria-labelledby="course-detail-heading-placeholder">
+            <button id="back-to-courses" class="bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 transition duration-300 mb-6" aria-label="Back to courses list">
                 &larr; Back to Courses
             </button>
+            <!-- Note: The h2 inside course-detail-content will serve as its accessible name once loaded. -->
+            <!-- Adding a placeholder id for aria-labelledby for the section itself. -->
             <div id="course-detail-content" class="bg-white p-6 rounded-lg shadow-md">
                 <!-- Course details will be dynamically loaded here by JavaScript -->
-                <p class="text-gray-500 text-center">Loading course details...</p>
+                <p class="text-gray-500 text-center" role="status">Loading course details...</p>
+                 <h2 id="course-detail-heading-placeholder" class="sr-only">Course Detail</h2>
             </div>
         </section>
 
         <!-- Quiz Start Section -->
-        <section id="quiz-start" class="page-section hidden">
-            <button id="back-to-quizzes" class="bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 transition duration-300 mb-6">
+        <section id="quiz-start" class="page-section hidden" aria-labelledby="quiz-start-heading-placeholder">
+            <button id="back-to-quizzes" class="bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 transition duration-300 mb-6" aria-label="Back to quizzes list">
                 &larr; Back to Quizzes
             </button>
+            <!-- Note: The h2 inside quiz-start-content will serve as its accessible name once loaded. -->
             <div id="quiz-start-content" class="bg-white p-6 rounded-lg shadow-md">
                 <!-- Quiz start details will be dynamically loaded here by JavaScript -->
-                <p class="text-gray-500 text-center">Loading quiz details...</p>
+                <p class="text-gray-500 text-center" role="status">Loading quiz details...</p>
+                <h2 id="quiz-start-heading-placeholder" class="sr-only">Quiz Start</h2>
             </div>
         </section>
 
-        <!-- NEW: Quiz Play Section -->
-        <section id="quiz-play" class="page-section hidden">
+        <!-- Quiz Play Section -->
+        <section id="quiz-play" class="page-section hidden" aria-labelledby="quiz-title-display">
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-bold text-gray-700 mb-4" id="quiz-title-display"></h3>
-                <p class="text-gray-600 mb-6" id="quiz-question-number">Question 1 of 5</p>
+                <h3 id="quiz-title-display" class="text-xl font-bold text-gray-700 mb-4"><!-- Quiz title loads here --></h3>
+                <p class="text-gray-600 mb-6" id="quiz-question-number" aria-live="polite">Question 1 of 5</p>
 
                 <div class="mb-8">
-                    <p class="text-2xl font-semibold text-gray-900 mb-4" id="quiz-question-container">
+                    <p class="text-2xl font-semibold text-gray-900 mb-4" id="quiz-question-container" aria-live="polite">
                         Loading question...
                     </p>
-                    <div id="quiz-options-container" class="space-y-3">
+                    <div id="quiz-options-container" class="space-y-3" role="group" aria-labelledby="quiz-question-container">
                         <!-- Options will be loaded here by JavaScript -->
                     </div>
                 </div>
@@ -108,11 +113,11 @@
             </div>
         </section>
 
-        <!-- NEW: Quiz Result Section -->
-        <section id="quiz-result" class="page-section hidden text-center">
+        <!-- Quiz Result Section -->
+        <section id="quiz-result" class="page-section hidden text-center" aria-labelledby="quiz-result-heading">
             <div class="bg-white p-8 rounded-lg shadow-md max-w-md mx-auto">
-                <h2 class="text-3xl font-bold text-green-700 mb-4">Quiz Completed!</h2>
-                <p class="text-xl text-gray-800 mb-6" id="quiz-score-display">Your score: -- / --</p>
+                <h2 id="quiz-result-heading" class="text-3xl font-bold text-green-700 mb-4">Quiz Completed!</h2>
+                <p class="text-xl text-gray-800 mb-6" id="quiz-score-display" aria-live="assertive">Your score: -- / --</p>
                 <div class="space-y-4">
                     <button id="retake-quiz-btn" class="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300 text-lg font-semibold">
                         Retake Quiz
@@ -125,14 +130,14 @@
         </section>
 
         <!-- Profile and Contact sections -->
-        <section id="profile" class="page-section hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Your Learning Profile</h2>
+        <section id="profile" class="page-section hidden" aria-labelledby="profile-heading">
+            <h2 id="profile-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-purple-500 pb-2">Your Learning Profile</h2>
             <p class="text-gray-700">This is where your personalized learning profile will appear.</p>
             <p class="text-gray-700 mt-4">Stay tuned for features like progress tracking, achievements, and more!</p>
         </section>
 
-        <section id="contact" class="page-section hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-pink-500 pb-2">Contact Us</h2>
+        <section id="contact" class="page-section hidden" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-pink-500 pb-2">Contact Us</h2>
             <p class="text-gray-700">Have questions or feedback? Reach out to us!</p>
             <p class="text-gray-700 mt-4">
                 Email: <a href="mailto:support@educonnect.com" class="text-blue-600 hover:underline">support@educonnect.com</a>
@@ -142,10 +147,10 @@
             </p>
         </section>
 
-    </div> <!-- /#content-area -->
+    </main> <!-- /#content-area -->
 
     <!-- A simple footer for copyright or extra links -->
-    <footer class="text-center text-gray-500 text-sm mt-12 py-4 border-t border-gray-200">
+    <footer class="text-center text-gray-500 text-sm mt-12 py-4 border-t border-gray-200" role="contentinfo">
         &copy; 2025 EduConnect. All rights reserved.
     </footer>
 
