@@ -1,0 +1,26 @@
+    /*
+     * This CSS file is primarily used for custom styles or
+     * to override Tailwind CSS defaults if needed.
+     * We'll use Tailwind classes directly in HTML for most styling.
+     */
+
+    /*
+     * Import Google Font 'Inter' for a modern look.
+     * This will be applied globally by Tailwind's base styles.
+     */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* Custom styles go here if needed */
+    html, body {
+        font-family: 'Inter', sans-serif; /* Apply Inter font */
+        -webkit-font-smoothing: antialiased; /* Better font rendering */
+        -moz-osx-font-smoothing: grayscale; /* Better font rendering */
+    }
+
+    /*
+     * Since we're using Tailwind's utility classes for layout,
+     * we don't need the `body` flexbox properties here that we used before.
+     * Tailwind's `container`, `mx-auto`, `flex`, `justify-between`, etc.,
+     * handle the layout more efficiently.
+     */
+    
